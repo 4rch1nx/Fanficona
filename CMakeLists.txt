@@ -3,16 +3,18 @@ project(Fanficona)
 
 include(FetchContent)
 
+set(TINY_ENGINE_NO_EXAMPLES ON CACHE BOOL "")
+
 FetchContent_Declare(
-    tiny_engine
-    GIT_REPOSITORy https://github.com/zen4xx/tiny_engine.git
-    GIT_TAG        main
+    Tiny_engine
+    GIT_REPOSITORY https://github.com/zen4xx/tiny_engine.git
+    GIT_TAG        master
 )
 
-FetchContent_MakeAvailable(tiny_engine)
+FetchContent_MakeAvailable(Tiny_engine)
 
 add_executable(Fanficona main.cpp)
 
-target_link_libraries(Fanficona PRIVATE tiny_engine)
+target_include_directories(Fanficona PRIVATE ${tiny_engine_SOURCE_DIR})
 
-target_include_directories(Fanficona PRIVATE ${tiny_engine_SOURCE_DIR}/include)
+target_link_libraries(Fanficona PRIVATE Tiny_engine)
