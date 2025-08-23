@@ -13,7 +13,7 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(Tiny_engine)
 
-set(CMAKE_DIR "${tiny_engine_SOURCE_DIR}/assets")
+set(CMAKE_DIR "${tiny_engine_SOURCE_DIR}/tiny_engine_assets")
 set(TARGET_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
 file(COPY ${CMAKE_DIR} DESTINATION ${TARGET_DIR}) # for nessasery tiny_engine assets
 
