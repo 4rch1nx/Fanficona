@@ -13,6 +13,10 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(Tiny_engine)
 
+set(CMAKE_DIR "${tiny_engine_SOURCE_DIR}/assets")
+set(TARGET_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
+file(COPY ${CMAKE_DIR} DESTINATION ${TARGET_DIR}) # for nessasery tiny_engine assets
+
 add_executable(Fanficona main.cpp)
 
 target_include_directories(Fanficona PRIVATE ${tiny_engine_SOURCE_DIR})
